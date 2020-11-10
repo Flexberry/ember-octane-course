@@ -1,0 +1,25 @@
+<div class="panel-heading">
+  <div class="search">
+    {{input type="text" placeholder="Search by Author Name" value=search}}
+  </div>
+
+  <a href class="btn-new">
+    <div class="sr-only">Add new Author</div>
+  </a>
+</div>
+
+<div class="panel-content">
+  <h3 class="panel-title">Authors</h3>
+
+  <ul class="collection">
+    {{#each this.model as |author|}}
+      <li>
+        <LinkTo @route="author.detail" @model="{{author.id}}">
+          <strong>{{ author.firstName }}</strong>, {{ author.lastName }}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+{{outlet}}
