@@ -13,3 +13,10 @@
 ### Занятие 2
 
 1. [Примеры по основам JavaScript и ES6/ES7](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-2/Examples/JS-Basics)
+2. [Пример Ember-приложения с Bootstrap 4](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-2/Examples/Start-Page-Example)
+3. [Шаблон для домашнего задания к занятию](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-2/Homework/Start-Page-Template)
+
+### Занятие 3
+
+1. [Пример Ember-приложения с CRUD-операциями над бизнес-объектом и поиском по списку объектов](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-3/Examples/books-demo)
+2. [Шаблон для домашнего задания к занятию](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-3/Homework/Books-And-Speakers)
