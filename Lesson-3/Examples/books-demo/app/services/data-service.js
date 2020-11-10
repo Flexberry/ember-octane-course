@@ -15,4 +15,34 @@ export default class DataServiceService extends Service {
     let response = await fetch(`${url.backEndURL}/authors/${id}`);
     return response.json();
   }
+
+  changeAuthor(author) {
+    let url = getOwner(this).application;
+    return fetch(`${url.backEndURL}/authors/${author.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(author)
+    });
+  }
+
+  createAuthor(author) {
+    let url = getOwner(this).application;
+    return fetch(`${url.backEndURL}/authors`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(author)
+    });
+  }
+
+  deleteAuthor(id) {
+    let url = getOwner(this).application;
+    return fetch(`${url.backEndURL}/authors/${id}`, {
+      method: 'DELETE',
+    });
+  }
+
 }

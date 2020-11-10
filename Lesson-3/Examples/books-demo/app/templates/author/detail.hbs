@@ -2,7 +2,7 @@
 
 <div class="slide-out">
   <div class="slide-out-card">
-    <LinkTo @route="author" class="btn-back">
+    <LinkTo @route="author" @class="btn-back">
       <span class="sr-only">Back</span>
     </LinkTo>
 
@@ -11,9 +11,9 @@
         <h3>{{this.model.lastName}} {{this.model.firstName}}</h3>
 
         <div class="actions">
-          <a href class="btn-pop">edit</a>
+          <LinkTo @route="author.edit" @class="btn-pop" @model="{{this.model.id}}">edit</LinkTo>
 
-          <button class="btn-recessed">delete</button>
+          <button class="btn-recessed" {{on "click" (fn this.deleteAuthor this.model.id)}}>delete</button>
         </div>
       </div>
     </div>
