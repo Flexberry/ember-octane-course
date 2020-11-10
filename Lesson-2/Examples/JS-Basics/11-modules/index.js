@@ -1,10 +1,9 @@
 // const express = require('express');
-// const core = require('./core');
+// const core = require('./core/index.js');
 
 import express from 'express';
-import { message, add } from './core/index.js';
-// import message from './core/index.js';
-
+// import { message, add } from './core/index.js';
+import message from './core/index.js';
 
 const app = express();
 app.get('/', (req, res) => {
