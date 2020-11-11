@@ -84,6 +84,10 @@ a.tag-link:hover {
   min-width: 400px;
 }
 
+.fix-margin {
+  margin-top: -11px;
+}
+
 /* Bootstrap file styles
 -------------------------------------------------- */
 
