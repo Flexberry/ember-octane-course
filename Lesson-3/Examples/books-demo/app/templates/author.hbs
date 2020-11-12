@@ -11,15 +11,25 @@
 <div class="panel-content">
   <h3 class="panel-title">Authors</h3>
 
-  <ul class="collection">
-    {{#each this.model as |author|}}
-      <li>
-        <LinkTo @route="author.detail" @model="{{author.id}}">
-          <strong>{{ author.firstName }}</strong>, {{ author.lastName }}
-        </LinkTo>
-      </li>
-    {{/each}}
-  </ul>
+  {{#if this.isLoading}}
+    <div class="welcome-page">
+      <img src="/loading.gif" alt="">
+    </div>
+  {{else}}
+    <ul class="collection">
+      {{#each this.model as |author|}}
+        <li>
+          <AuthorItem
+            @firstName={{author.firstName}}
+            @lastName={{author.lastName}}
+            @authorId={{author.id}}
+            class="author"
+            title="{{author.lastName}}"
+          />
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
 </div>
 
 {{outlet}}

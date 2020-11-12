@@ -1,24 +1,20 @@
 import Service from '@ember/service';
-// import ENV from 'books-demo/config/environment';
-
-import { getOwner } from '@ember/application';
+import config from 'books-demo/config/environment';
 
 export default class DataServiceService extends Service {
-  async readAuthors() {
-    let url = getOwner(this).application;
-    let response = await fetch(`${url.backEndURL}/authors`);
+  async readAuthors(searchValue) {
+    let searchSegm = searchValue ? `?q=${searchValue}` : '';
+    let response = await fetch(`${config.APP.backEndURL}/authors${searchSegm}`);
     return response.json();
   }
 
   async readAuthor(id) {
-    let url = getOwner(this).application;
-    let response = await fetch(`${url.backEndURL}/authors/${id}`);
+    let response = await fetch(`${config.APP.backEndURL}/authors/${id}`);
     return response.json();
   }
 
   changeAuthor(author) {
-    let url = getOwner(this).application;
-    return fetch(`${url.backEndURL}/authors/${author.id}`, {
+    return fetch(`${config.APP.backEndURL}/authors/${author.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -28,8 +24,7 @@ export default class DataServiceService extends Service {
   }
 
   createAuthor(author) {
-    let url = getOwner(this).application;
-    return fetch(`${url.backEndURL}/authors`, {
+    return fetch(`${config.APP.backEndURL}/authors`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,8 +34,7 @@ export default class DataServiceService extends Service {
   }
 
   deleteAuthor(id) {
-    let url = getOwner(this).application;
-    return fetch(`${url.backEndURL}/authors/${id}`, {
+    return fetch(`${config.APP.backEndURL}/authors/${id}`, {
       method: 'DELETE',
     });
   }

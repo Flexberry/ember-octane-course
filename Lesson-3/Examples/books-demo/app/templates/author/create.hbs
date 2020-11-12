@@ -15,12 +15,12 @@
       <form {{on "submit" this.saveAuthor}}>
         <div class="field">
           <label>First Name:</label>
-          <input type="text" placeholder="First Name" value="{{this.model.firstName}}" oninput={{action "changeFirstName" value="target.value"}} />
+          <Input @type="text" placeholder="First Name" @value={{this.model.firstName}} />
         </div>
 
         <div class="field">
           <label>Last Name:</label>
-          {{input type="text" placeholder="Last Name" value=this.model.lastName}}
+          <Input @type="text" placeholder="Last Name" @value={{this.model.lastName}} />
         </div>
 
         <div class="form-footer">

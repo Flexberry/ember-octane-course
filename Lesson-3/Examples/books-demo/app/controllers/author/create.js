@@ -21,7 +21,7 @@ export default class AuthorCreateController extends Controller {
 
   @action
   changeFirstName(firstName) {
-    this.model.firstName = firstName;
+    this.firstName = firstName;
   }
 
   // reset() {
