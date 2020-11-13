@@ -36,18 +36,22 @@
   }
 
   $(function() {
-    document.querySelector('.custom-file-input').addEventListener('change',function(e){
-      setFileName(e.target);
-    });
+    if (document.querySelector('.custom-file-input')) {
+      document.querySelector('.custom-file-input').addEventListener('change',function(e){
+        setFileName(e.target);
+      });
+    }
   
-    document.querySelector('.custom-file-clear').addEventListener('click',function(e){
-      if (e.target.parentNode) {
-        let fileElement = e.target.parentNode.previousElementSibling.querySelector('.custom-file-input');
-        if (fileElement) {
-          fileElement.value = null;
-          setFileName(fileElement);
+    if (document.querySelector('.custom-file-clear')) {
+      document.querySelector('.custom-file-clear').addEventListener('click',function(e){
+        if (e.target.parentNode) {
+          let fileElement = e.target.parentNode.previousElementSibling.querySelector('.custom-file-input');
+          if (fileElement) {
+            fileElement.value = null;
+            setFileName(fileElement);
+          }
         }
-      }
-    });
+      });
+    }
   });
 })();
