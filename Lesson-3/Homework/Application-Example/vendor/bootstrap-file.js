@@ -42,7 +42,7 @@
       });
     }
 
-    if (document.querySelector('.custom-file-input')) {
+    if (document.querySelector('.custom-file-clear')) {
       document.querySelector('.custom-file-clear').addEventListener('click',function(e){
         if (e.target.parentNode) {
           let fileElement = e.target.parentNode.previousElementSibling.querySelector('.custom-file-input');
