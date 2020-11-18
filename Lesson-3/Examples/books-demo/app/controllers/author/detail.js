@@ -7,8 +7,13 @@ export default class AuthorDetailController extends Controller {
 
   @action
   async deleteAuthor(id) {
-    await this.dataService.deleteAuthor(id);
+    try {
+      await this.dataService.deleteAuthor(id);
 
-    this.transitionToRoute('author');
+      this.transitionToRoute('author');
+    }
+    catch(e) {
+      this.send('error', e);
+    }
   }
 }

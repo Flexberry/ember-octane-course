@@ -20,7 +20,13 @@ export default class AuthorRoute extends Route {
     }).
     then((data) => {
       this.controller.model = data;
-    }).finally(() => {
+    }).
+    catch((e) => {
+      // this.send('error', e);
+      this.controller.isError = true;
+      this.controller.error = e.message;
+    }).
+    finally(() => {
       if (promise === this.lastPromise) {
         this.controller.isLoading = false;
       }
@@ -36,10 +42,12 @@ export default class AuthorRoute extends Route {
     super.setupController(...arguments);
 
     controller.isLoading = true;
+    controller.isError = false;
   }
 
   resetController(controller, isExiting) {
     if (isExiting) {
+      controller.isError = false;
       controller.isLoading = false;
       this.lastPromise = false;
     }

@@ -6,12 +6,17 @@ export default class AuthorEditController extends Controller {
   @service dataService;
 
   @action
-  async saveAuthor(e) {
-    e.preventDefault();
+  async saveAuthor(author) {
+    let authorToSave = Object.assign({}, author);
+    authorToSave.id = this.model.id;
+    try {
+      await this.dataService.changeAuthor(authorToSave);
 
-    await this.dataService.changeAuthor(this.model);
-
-    this.transitionToRoute('author');
+      this.transitionToRoute('author');
+    }
+    catch(e) {
+      this.send('error', e);
+    }
   }
 
   @action

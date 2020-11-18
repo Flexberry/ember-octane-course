@@ -12,5 +12,6 @@ Router.map(function() {
     this.route('edit', { path: '/:id/edit' });
     this.route('create');
   });
+  this.route('error', { path: "/:error"});
   this.route('not-found', { path: "*path"});
 });

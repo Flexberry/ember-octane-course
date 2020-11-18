@@ -1,0 +1,15 @@
+<form {{on "submit" this.saveAuthor}}>
+  <div class="field">
+    <label>First Name:</label>
+    <input type="text" placeholder="First Name" value={{this.firstName}} onchange={{action (mut this._firstName) value="target.value"}} />
+  </div>
+
+  <div class="field">
+    <label>Last Name:</label>
+    <Input @type="text" placeholder="Last Name" @value={{@lastName}} />
+  </div>
+
+  <div class="form-footer">
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>

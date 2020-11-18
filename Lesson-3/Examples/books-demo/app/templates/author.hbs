@@ -16,19 +16,28 @@
       <img src="/loading.gif" alt="">
     </div>
   {{else}}
-    <ul class="collection">
-      {{#each this.model as |author|}}
-        <li>
-          <AuthorItem
-            @firstName={{author.firstName}}
-            @lastName={{author.lastName}}
-            @authorId={{author.id}}
-            class="author"
-            title="{{author.lastName}}"
-          />
-        </li>
-      {{/each}}
-    </ul>
+    {{#if this.isError}}
+      <div class="welcome-page">
+        <img src="/error.gif" alt="Error">
+        {{#if this.error}}
+          <h2>Error: {{this.error}}</h2>
+        {{/if}}
+      </div>
+    {{else}}
+      <ul class="collection">
+        {{#each this.model as |author|}}
+          <li>
+            <AuthorItem
+              @firstName={{author.firstName}}
+              @lastName={{author.lastName}}
+              @authorId={{author.id}}
+              class="author"
+              title="{{author.lastName}}"
+            />
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
   {{/if}}
 </div>
 

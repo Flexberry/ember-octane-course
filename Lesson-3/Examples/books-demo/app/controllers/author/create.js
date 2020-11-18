@@ -11,17 +11,23 @@ export default class AuthorCreateController extends Controller {
   @tracked lastName;
 
   @action
-  async saveAuthor(e) {
-    e.preventDefault();
+  async saveAuthor(author) {
+    console.log(`Author from component: firstName = ${author.firstName}, lastName = ${author.lastName}`)
+    console.log(`Author from model: firstName = ${this.model.firstName}, lastName = ${this.model.lastName}`)
+    try {
+      await this.dataService.createAuthor(author);
 
-    await this.dataService.createAuthor(this.model);
-
-    this.transitionToRoute('author');
+      this.transitionToRoute('author');
+    }
+    catch(e) {
+      this.send('error', e);
+      // this.transitionToRoute('error', e.message);
+    }
   }
 
   @action
-  changeFirstName(firstName) {
-    this.firstName = firstName;
+  changeFirstName() {
+    this.model.firstName = 'Some New Name';
   }
 
   // reset() {

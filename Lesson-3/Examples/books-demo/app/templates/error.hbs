@@ -1,3 +1,6 @@
 <div class="welcome-page">
-  Error...
+  <img src="/error.gif" alt="Error">
+  {{#if model.error}}
+    <h2>Error: {{model.error}}</h2>
+  {{/if}}
 </div>

@@ -12,21 +12,8 @@
     </div>
 
     <div class="slide-out-content">
-      <form {{on "submit" this.saveAuthor}}>
-        <div class="field">
-          <label>First Name:</label>
-          <Input @type="text" placeholder="First Name" @value={{this.model.firstName}} />
-        </div>
-
-        <div class="field">
-          <label>Last Name:</label>
-          <Input @type="text" placeholder="Last Name" @value={{this.model.lastName}} />
-        </div>
-
-        <div class="form-footer">
-          <button type="submit" class="btn-submit">save</button>
-        </div>
-      </form>
+      <AuthorForm @firstName={{this.model.firstName}} @lastName={{this.model.lastName}} @onSubmit={{this.saveAuthor}} />
+      <button class="btn-pop" {{on "click" this.changeFirstName}}>Change firstName</button>
     </div>
   </div>
 </div>
