@@ -1,0 +1,16 @@
+<form {{on "submit" this.saveReview}}>
+  <div class="field">
+    <label>Your Full Name:</label>
+    <Input @type="text" placeholder="Name" @value={{this.user}} />
+  </div>
+
+  <div class="field">
+    <label>Write Your Review:</label>
+    <Textarea @type="text" placeholder="Review Text" @value={{this.body}} />
+  </div>
+
+  <div class="form-footer">
+    <LinkTo @route="book.detail" @model={{@book.id}} @class="btn-reset">reset</LinkTo>
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>
