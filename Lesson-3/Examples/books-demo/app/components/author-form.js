@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { next } from '@ember/runloop';
 
 
 export default class AuthorFormComponent extends Component {
@@ -11,7 +12,10 @@ export default class AuthorFormComponent extends Component {
 
   get firstName() {
     if (this.firstNameArgsPrevValue !== this.args.firstName) {
-      this._firstName = this.firstNameArgsPrevValue = this.args.firstName;
+      this.firstNameArgsPrevValue = this.args.firstName;
+      next(this, () => {
+        this._firstName = this.args.firstName;
+      });
     }
 
     return this._firstName;
