@@ -20,3 +20,7 @@
 
 1. [Пример Ember-приложения с CRUD-операциями над бизнес-объектом и поиском по списку объектов](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-3/Examples/books-demo)
 2. [Шаблон для домашнего задания к занятиям](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-3/Homework/Books-And-Speakers)
+
+### Занятия 6-7
+
+1. [Пример Ember-приложения с использованием Ember Data](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-6/Examples/book-demo)
