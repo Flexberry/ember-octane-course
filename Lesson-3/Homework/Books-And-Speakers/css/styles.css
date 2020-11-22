@@ -117,12 +117,20 @@ a.tag-link:hover {
     height: 4em;
   }
 
-  .form-inline .form-control {
-    width: auto;
+  .form-inline .form-control:not(.search-only) {
+    width: 100px;
+  }
+
+  .form-inline .form-control.search-only {
+    width: inherit;
   }
 
   .search-long {
     min-width: inherit;
+  }
+
+  .col-md-auto {
+    width: auto;
   }
 }
 
@@ -131,8 +139,17 @@ a.tag-link:hover {
     width: 6em;
     height: 6em;
   }
+
+  .form-inline .form-control:not(.search-only) {
+    width: 130px;
+  }
+
   .search-long {
     min-width: inherit;
+  }
+
+  .col-md-auto {
+    width: auto;
   }
 }
 
@@ -142,8 +159,12 @@ a.tag-link:hover {
     height: 7em;
   }
 
+  .form-inline .form-control:not(.search-only) {
+    width: inherit;
+  }
+
   .search-long {
-    min-width: 300px;
+    min-width: 250px;
   }
 }
 
