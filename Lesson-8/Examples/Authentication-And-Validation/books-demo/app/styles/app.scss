@@ -1,0 +1,48 @@
+@import "embercasts-library";
+
+$ember-power-select-border-color: #ccc;
+$ember-power-select-background-color: #f8f9fc;
+$ember-basic-dropdown-content-background-color: #fff;
+$ember-power-select-trigger-ltr-padding: 0.5rem;
+$ember-power-select-trigger-rtl-padding: 0.5rem;
+$ember-power-select-trigger-default-border-radius: 0.2rem;
+$ember-power-select-search-input-border-radius: 0.2rem;
+
+@import "ember-power-select";
+
+/* ember-power-select component styles
+-------------------------------------------------- */
+
+.ember-basic-dropdown-content {
+  background-color: #fff;
+}
+
+.ember-power-select-trigger {
+  line-height: initial;
+  min-height: 36px;
+}
+
+.ember-power-select-selected-item,
+.ember-power-select-placeholder {
+  margin-left: 0px;
+}
+
+.ember-power-select-search-input {
+  padding: 0.5rem;
+  height: 36px;
+}
+
+.ember-power-select-search-input:focus {
+  border-bottom-color: $c-primary;
+}
+
+/* liquid-fire styles
+-------------------------------------------------- */
+
+.modal-if {
+  z-index: 1;
+}
+
+.no-overflow {
+  overflow: visible;
+}

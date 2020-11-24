@@ -1,0 +1,30 @@
+<div class="app">
+  <nav class="main-nav">
+    <h1 class="logo">
+      <LinkTo @route="index">
+        <img src="/logo.svg" alt="Ember Library">
+        <span class="sr-only">Ember Library</span>
+      </LinkTo>
+    </h1>
+
+    <ul>
+      <li><LinkTo @route="author.index">Authors</LinkTo></li>
+      <li><LinkTo @route="book.index">Books</LinkTo></li>
+      {{#if this.session.isAuthenticated}}
+        <li><a href="#" {{on "click" this.logout}}>Logout</a></li>
+      {{else}}
+        <li><LinkTo @route="register">Register</LinkTo></li>
+        <li><LinkTo @route="login">Login</LinkTo></li>
+      {{/if}}
+    </ul>
+
+    {{#if this.session.isAuthenticated}}
+      <div class="current-user">
+        {{!-- Hello, <strong>{{currentUser.user.username}}</strong> --}}
+        Hello, <strong>{{this.session.data.authenticated.tokenData.username}}</strong>
+      </div>
+    {{/if}}
+  </nav>
+
+  <main class="app-content">{{outlet}}</main>
+</div>

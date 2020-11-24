@@ -1,0 +1,7 @@
+<div class="slide-out-content">
+  <div class="title">
+    <h3>New Review for {{this.model.book.title}}</h3>
+  </div>
+
+  <ReviewForm @review={{this.model.review}} @book={{this.model.book}} @onSubmit={{this.saveReview}} />
+</div>

@@ -1,0 +1,29 @@
+<form {{on "submit" this.saveUser}}>
+  <div class="field">
+    <label>Email:</label>
+    <Input @type="text" placeholder="Email" @value={{this.email}} />
+  </div>
+
+  <div class="field">
+    <label>Username:</label>
+    <Input @type="text" placeholder="Username" @value={{this.username}} />
+
+    {{#each @errors.username as |error|}}
+      <span class="error-message">{{error.message}}</span>
+    {{/each}}
+  </div>
+
+  <div class="field">
+    <label>Password:</label>
+    <Input @type="password" placeholder="Password" @value={{this.password}} />
+  </div>
+
+  <div class="field">
+    <label>Confirm Password:</label>
+    <Input @type="password" placeholder="Confirm Password" @value={{this.passwordConfirmation}} />
+  </div>
+
+  <div class="form-footer">
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>

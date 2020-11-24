@@ -1,0 +1,34 @@
+{{#if (is-pending this.model.reviews)}}
+  <div class="welcome-page">
+    <img src="/loading.gif" alt="">
+  </div>
+{{else}}
+  <div class="slide-out-content">
+    <div class="title">
+      <h3>{{this.model.reviews.length}} Reviews</h3>
+      <div class="actions">
+        <LinkTo @route="book.detail.new-review" @model={{this.model.id}} @class="btn-secondary btn-add btn">
+          Add a review
+        </LinkTo>
+      </div>
+    </div>
+
+    {{#if (is-fulfilled this.model.reviews)}}
+      <ul class="review-list">
+        {{#each this.model.reviews as |review|}}
+          <li class="review">
+            <p>{{review.body}}</p>
+            <div class="details">
+              <p class="review-user">{{review.user}}</p>
+              <p class="review-ime">{{moment-from-now review.createdAt}}</p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="welcome-page">
+        <img src="/error.gif" alt="">
+      </div>
+    {{/if}}
+  </div>
+{{/if}}
