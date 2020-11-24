@@ -28,4 +28,4 @@
 
 ### Занятия 8-9
 
-1. [Пример Ember-приложения с реализацией аутентификации и авторизации](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-6/Examples/book-demo)
+1. [Пример Ember-приложения с реализацией аутентификации и авторизации](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-8/Examples/Authentication-And-Validation/books-demo)
