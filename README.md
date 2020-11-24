@@ -25,3 +25,7 @@
 
 1. [Пример Ember-приложения с использованием Ember Data](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-6/Examples/book-demo)
 2. [Шаблон для домашнего задания к занятиям](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-6/Homework/Books-App-Template)
+
+### Занятия 8-9
+
+1. [Пример Ember-приложения с реализацией аутентификации и авторизации](https://github.com/Flexberry/ember-octane-course/tree/main/Lesson-6/Examples/book-demo)
