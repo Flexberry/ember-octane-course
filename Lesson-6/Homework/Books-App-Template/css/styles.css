@@ -7,7 +7,7 @@ html {
 
 body {
   height: 100%;
-  color: #263148;
+  color: #3B4256;
 }
 
 .footer {
@@ -28,13 +28,18 @@ body {
   flex: 1;
 }
 
-a {
+/* a {
   color: #00a77e;
 }
 
 a:hover {
   color: #01c595;
   text-decoration: none;
+} */
+
+.navbar,
+.footer {
+  box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
 }
 
 .navbar-light .navbar-brand,
@@ -88,6 +93,37 @@ a.tag-link:hover {
   margin-top: -11px;
 }
 
+/* .btn-outline-primary {
+  color: #7952b3;
+  border-color: #7952b3;
+} */
+
+.btn:not([class*="btn-"]) {
+  color: #3B4256;
+}
+.btn-trash:hover {
+  color: #E53935;
+  
+}
+.btn-edit:hover {
+  color: #62B0FF;
+}
+.btn-trash,
+.btn-edit {
+  padding-right: 0;
+}
+.btn-edit:focus,
+.btn-trash:focus,
+.btn-video:focus, 
+.btn-present:focus{
+  box-shadow: none;
+}
+.btn-present {
+  color: #71BC90;
+}
+.btn-video {
+  color: #62B0FF;
+}
 /* Bootstrap file styles
 -------------------------------------------------- */
 
@@ -158,6 +194,92 @@ a.tag-link:hover {
   overflow: hidden;
   content: '';
   display: inline-block;
+}
+
+/* Signin form styles
+-------------------------------------------------- */
+.form-signin-wrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #F4F7FB;
+  height: 100%;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.home-page {
+  background-color: #F4F7FB;
+}
+
+/* card */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+  /* margin: 1.5em; */
+}
+.card-header,
+.card-footer {
+  background-color: #F4F7FB;
+}
+.card-header .card-title,
+.card-body .card-title {
+  margin: 0;
+}
+a.card h3,
+a.card:hover h3 {
+  color: #3B4256;
+  outline: none;
+  margin-top: 2rem;
+}
+a.card:hover {
+  text-decoration: none;
+}
+a.card .card-body {
+  padding: 2rem;
+}
+
+.border.border-dark {
+  border: 1px solid rgba(0, 0, 0, 0.1)!important;
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+}
+
+/* form-control */
+/* .form-control {
+  background: #ECF2FB;
+  border: 1px solid #ECF2FB;
+  line-height: 1.42857143em;
+  padding: 0.64285714em 0.78571429em;
+} */
+
+.col-12.text-right > .btn{
+  margin: .25rem .125rem;
 }
 
 /* Media queries
