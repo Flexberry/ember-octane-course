@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -52,31 +52,31 @@
 			<h2 class="text-center">Редактирование книги: Название</h2>
 			<form class="edit-form">
 				<div class="form-group row">
-					<label for="inputTitle" class="col-sm-2 col-form-label">Название:</label>
+					<label for="inputTitle" class="col-sm-2 col-form-label text-right">Название</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control form-control-lg" id="inputTitle" placeholder="Полное название книги">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputAuthor" class="col-sm-2 col-form-label">Автор:</label>
+					<label for="inputAuthor" class="col-sm-2 col-form-label text-right">Автор</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control form-control-lg" id="inputAuthor" placeholder="Фамилия И.О. автора">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputPagesCount" class="col-sm-2 col-form-label">Объем:</label>
+					<label for="inputPagesCount" class="col-sm-2 col-form-label text-right">Объем</label>
 					<div class="col-sm-10">
 						<input type="number" class="form-control form-control-lg" id="inputPagesCount" placeholder="Количество страниц книги">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputDescriptionURL" class="col-sm-2 col-form-label">Описание:</label>
+					<label for="inputDescriptionURL" class="col-sm-2 col-form-label text-right">Описание</label>
 					<div class="col-sm-10">
 						<input type="url" class="form-control form-control-lg" id="inputDescriptionURL" placeholder="Ссылка на сайт с описанием книги">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="customFile" class="col-sm-2 col-form-label">Обложка:</label>
+					<label for="customFile" class="col-sm-2 col-form-label text-right">Обложка</label>
 					<div class="input-group input-group-lg col-sm-10">
 						<div class="custom-file">
 							<input type="file" class="custom-file-input" id="customFile" lang="ru">
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputTags" class="col-sm-2 col-form-label">Теги:</label>
+					<label for="inputTags" class="col-sm-2 col-form-label text-right">Теги</label>
 					<div class="col-sm-10">
 						<!-- <input type="text" class="form-control" id="inputPatronymic" placeholder="#Теги через запятую"> -->
 						<select multiple="multiple" data-role="tagsinput" style="display: none;" id="inputTags">
@@ -98,10 +98,8 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<div class="col-6">
-						<button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
-					</div>
-					<div class="col-6 text-right">
+					<div class="col-12 text-right">
+						<button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
 						<button type="submit" class="btn btn-outline-secondary btn-lg">Отмена</button>
 					</div>
 				</div>
@@ -110,7 +108,7 @@
 	</div>
 	<footer class="footer">
 		<div class="container">
-		  	<span>&copy; Skyori, 2020</span>
+			<span>&copy; Skyori, 2020</span>
 		</div>
 	</footer>
 
@@ -118,5 +116,17 @@
 	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/tagsinput.js"></script>
 	<script src="js/bootstrap-file.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="js/bootstrap-datepicker.ru.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.datepicker').datepicker({
+				clearBtn: true,
+				format: "dd.mm.yyyy",
+				language: "ru",
+    			autoclose: true
+			});
+		});
+	</script>
 </body>
 </html>
