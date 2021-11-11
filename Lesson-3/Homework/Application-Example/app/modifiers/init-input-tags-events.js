@@ -1,6 +1,7 @@
 import { modifier } from 'ember-modifier';
 import { typeOf } from '@ember/utils';
 import { assert } from '@ember/debug';
+import $ from 'jquery';
 
 export default modifier((element, [tags, addTagListener, removeTagListener]) =>{
   assert('Passed tags must be an array', typeOf(tags) === 'array');

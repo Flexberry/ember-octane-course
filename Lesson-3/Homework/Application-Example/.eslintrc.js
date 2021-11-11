@@ -18,9 +18,12 @@ module.exports = {
     'plugin:ember/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    node: true
   },
-  rules: {},
+  rules: {
+    "ember/no-jquery": "off"
+  },
   overrides: [
     // node files
     {

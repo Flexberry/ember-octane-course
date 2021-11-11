@@ -26,10 +26,18 @@ module.exports = function(defaults) {
 
   app.import('vendor/tagsinput.css');
 
+  app.import('vendor/jquery.flexberry.downloadFile.js');
+  app.import('vendor/jquery.blobajaxtransport.js');
+
   const jsFiles = funnel('vendor', {
-    files: ['popper.min.js', 'bootstrap-file.js', 'tagsinput.js'],
+    files: ['popper.min.js', 'tagsinput.js', 'jquery-ui.js'],
     destDir: 'js'
   });
 
-  return app.toTree(jsFiles);
+  const jqueryFiles = funnel('node_modules/blueimp-file-upload/js', {
+    files: ['**/*.js'],
+    destDir: 'js'
+  });
+
+  return app.toTree([jsFiles, jqueryFiles]);
 };
