@@ -10,4 +10,8 @@ export default class CurrentUserService extends Service {
     let user = await this.store.queryRecord('user', { me: true });
     this.user = user;
   }
+
+  resetCurrentUser() {
+    this.user = null;
+  }
 }

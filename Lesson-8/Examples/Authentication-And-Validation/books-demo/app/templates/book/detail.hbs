@@ -10,11 +10,13 @@
       <div class="title">
         <h3>{{this.model.title}}</h3>
 
-        <div class="actions">
-          <LinkTo @route="book.edit" @class="btn-pop" @model="{{this.model.id}}">edit</LinkTo>
+        {{#if (await (can "edit book" this.model))}}
+          <div class="actions">
+            <LinkTo @route="book.edit" @class="btn-pop" @model="{{this.model.id}}">edit</LinkTo>
 
-          <button class="btn-recessed" {{on "click" this.deleteBook}}>delete</button>
-        </div>
+            <button class="btn-recessed" {{on "click" this.deleteBook}}>delete</button>
+          </div>
+        {{/if}}
       </div>
       <div class="details">
         <p>

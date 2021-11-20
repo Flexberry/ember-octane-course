@@ -4,5 +4,4 @@ export default class UserModel extends Model {
   @attr('string') email;
   @attr('string') username;
   @attr() password;
-  @attr() passwordConfirmation;
 }

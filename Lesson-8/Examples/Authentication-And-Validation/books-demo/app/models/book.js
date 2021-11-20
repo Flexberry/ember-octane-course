@@ -7,4 +7,5 @@ export default class BookModel extends Model {
 
   @belongsTo('author') author;
   @hasMany('review') reviews;
+  @belongsTo('user') user;
 }

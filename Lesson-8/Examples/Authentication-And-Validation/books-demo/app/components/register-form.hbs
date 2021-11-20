@@ -1,26 +1,49 @@
 <form {{on "submit" this.saveUser}}>
   <div class="field">
     <label>Email:</label>
-    <Input @type="text" placeholder="Email" @value={{this.email}} />
+    <Input @type="text" placeholder="Email" @value={{this.form.email}} />
+
+    {{#if (v-get this.form 'email' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this.form 'email' 'message'}}
+      </span>
+    {{/if}}
   </div>
 
   <div class="field">
     <label>Username:</label>
-    <Input @type="text" placeholder="Username" @value={{this.username}} />
+    <Input @type="text" placeholder="Username" @value={{this.form.username}} />
 
     {{#each @errors.username as |error|}}
       <span class="error-message">{{error.message}}</span>
     {{/each}}
+    {{#if (v-get this.form 'username' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this.form 'username' 'message'}}
+      </span>
+    {{/if}}
   </div>
 
   <div class="field">
     <label>Password:</label>
-    <Input @type="password" placeholder="Password" @value={{this.password}} />
+    <Input @type="password" placeholder="Password" @value={{this.form.password}} />
+
+    {{#if (v-get this.form 'password' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this.form 'password' 'message'}}
+      </span>
+    {{/if}}
   </div>
 
   <div class="field">
     <label>Confirm Password:</label>
-    <Input @type="password" placeholder="Confirm Password" @value={{this.passwordConfirmation}} />
+    <Input @type="password" placeholder="Confirm Password" @value={{this.form.passwordConfirmation}} />
+
+    {{#if (v-get this.form 'passwordConfirmation' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this.form 'passwordConfirmation' 'message'}}
+      </span>
+    {{/if}}
   </div>
 
   <div class="form-footer">

@@ -22,7 +22,7 @@ Router.map(function() {
     this.route('create');
   });
   this.route('error', { path: "/:error"});
-  this.route('not-found', { path: "*path"});
+  this.route('not-found', { path: "/*path"});
   this.route('register');
   this.route('login');
 });

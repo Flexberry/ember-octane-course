@@ -37,42 +37,48 @@
       "title": "The Clean Coder",
       "isbn": "0137081073",
       "publishDate": "2011-05-13T14:48:00.000Z",
-      "authorId": 1
+      "authorId": 1,
+      "userId": 1
     },
     {
       "id": 2,
       "title": "Agile Principles, Patterns, and Practices in C#",
       "isbn": "0131857258",
       "publishDate": "2006-07-20T11:32:00.000Z",
-      "authorId": 1
+      "authorId": 1,
+      "userId": 1
     },
     {
       "id": 3,
       "title": "The Chronicles of Narnia",
       "isbn": "9780007117307",
       "publishDate": "2008-10-29T10:22:00.000Z",
-      "authorId": 2
+      "authorId": 2,
+      "userId": 1
     },
     {
       "title": "25 moments of something",
       "isbn": "84848",
       "publishDate": "2020-11-02T19:00:00.000Z",
       "authorId": 1,
-      "id": 5
+      "id": 5,
+      "userId": 2
     },
     {
       "title": "Awsome Book for Programmers",
       "isbn": "34938475943",
       "publishDate": "2020-10-31T19:00:00.000Z",
       "authorId": 1,
-      "id": 6
+      "id": 6,
+      "userId": 2
     },
     {
       "title": "Super Cook Book",
       "isbn": "767878786",
       "publishDate": "2020-02-11T19:00:00.000Z",
       "authorId": 6,
-      "id": 7
+      "id": 7,
+      "userId": 2
     }
   ],
   "reviews": [
@@ -100,11 +106,22 @@
   ],
   "users": [
     {
-      "id": 1,
-      "email": "admin@admin.com",
-      "username": "admin",
-      "password": "123",
-      "passwordConfirmation": "123"
+      "email": "q@q.q",
+      "username": "q",
+      "password": "654a4563e84988929832e77d43f38455eaf9680737eef037256b90840ae41ebf",
+      "id": 1
+    },
+    {
+      "email": "f@f.f",
+      "username": "f",
+      "password": "134e733f9b4baae7e04cc7d67375a3a75579e0759e2b64c527052884300b041a",
+      "id": 2
+    },
+    {
+      "email": "r@r.r",
+      "username": "r",
+      "password": "3a024ca33c232c1ad006941a139d6e748e248da33764c3afa00738e86fc394f6",
+      "id": 3
     }
   ]
 }

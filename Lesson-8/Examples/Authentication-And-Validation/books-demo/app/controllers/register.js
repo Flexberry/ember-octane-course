@@ -12,7 +12,7 @@ export default class RegisterController extends Controller {
       newUser = this.store.createRecord('user', user);
       await newUser.save();
 
-      this.transitionToRoute('index');
+      this.transitionToRoute('login');
     }
     catch(e) {
       e.user = newUser;

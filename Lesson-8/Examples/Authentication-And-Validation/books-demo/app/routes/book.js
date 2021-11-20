@@ -1,7 +1,8 @@
 import Route from '@ember/routing/route';
 import { action } from '@ember/object';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default class BookRoute extends Route {
+export default class BookRoute extends Route.extend(AuthenticatedRouteMixin) {
   queryParams = {
     search: {
       refreshModel: true
