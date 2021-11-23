@@ -2,7 +2,7 @@
   "authors": [
     {
       "id": 1,
-      "firstName": "Robert5",
+      "firstName": "Robert",
       "lastName": "Martin"
     },
     {
@@ -41,7 +41,7 @@
       "id": 1,
       "title": "The Clean Coder",
       "isbn": "0137081073",
-      "publishDate": "2011-05-13T14:48:00.000Z",
+      "publishDate": "2011-05-12T18:00:00.000Z",
       "authorId": 1
     },
     {

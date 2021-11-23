@@ -6,4 +6,9 @@ export default class BookSerializer extends ApplicationSerializer {
     hash = super.normalize(...arguments);
     return hash;
   }
+
+  serialize() {
+    const hash = super.serialize(...arguments);
+    return hash;
+  }
 }
