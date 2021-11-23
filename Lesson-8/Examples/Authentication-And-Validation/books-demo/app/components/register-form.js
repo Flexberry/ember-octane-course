@@ -3,7 +3,6 @@ import { action } from '@ember/object';
 import { validator, buildValidations } from 'ember-cp-validations';
 import { tracked } from "@glimmer/tracking";
 import { getOwner } from "@ember/application";
-import { assign } from '@ember/polyfills';
 import Object from "@ember/object";
 
 const Validations = buildValidations({
@@ -45,13 +44,20 @@ const Validations = buildValidations({
 });
 
 class Form extends Object.extend(Validations) {
-  @tracked username = "";
-  @tracked email = "";
-  @tracked password = "";
+  @tracked username;
+  @tracked email;
+  @tracked password;
   @tracked passwordConfirmation = "";
+  @tracked user;
 
   get isInvalid() {
     return this.validations.isInvalid;
+  }
+
+  init() {
+    this.username = this.user.username;
+    this.email = this.user.email;
+    this.password = this.user.password;
   }
 
   serialize() {
@@ -66,7 +72,10 @@ class Form extends Object.extend(Validations) {
 export default class RegisterFormComponent extends Component {
   constructor() {
     super(...arguments);
-    this.form = Form.create(getOwner(this).ownerInjection());
+    this.form = Form.create(
+      getOwner(this).ownerInjection(),
+      { user: this.args.user }
+    );
   }
 
   @action

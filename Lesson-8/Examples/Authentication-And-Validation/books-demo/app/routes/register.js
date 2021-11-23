@@ -7,8 +7,7 @@ export default class RegisterRoute extends Route.extend(UnauthenticatedRouteMixi
     return {
       email: '',
       username: '',
-      password: '',
-      passwordConfirmation: ''
+      password: ''
     }
   }
 
